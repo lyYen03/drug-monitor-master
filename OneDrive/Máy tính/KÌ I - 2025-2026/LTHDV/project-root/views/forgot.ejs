@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Forgot password</h2>
+            <p>This demo does not implement email sending. Use DB to reset password manually for now.</p>
+            <% if (message) { %>
+                <div class="alert alert-info">
+                    <%= message %>
+                </div>
+                <% } %>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>

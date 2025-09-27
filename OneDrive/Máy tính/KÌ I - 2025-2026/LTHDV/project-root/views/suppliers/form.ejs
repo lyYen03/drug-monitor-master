@@ -1,0 +1,24 @@
+<%- include('../partials/header.ejs') %>
+
+    <h2>
+        <%= supplier ? 'Edit Supplier' : 'Create Supplier' %>
+    </h2>
+
+    <form method="post" action="<%= supplier ? '/suppliers/' + supplier._id + '/edit' : '/suppliers/create' %>">
+        <div class="mb-3">
+            <label>Name</label>
+            <input name="name" class="form-control" required value="<%= supplier ? supplier.name : '' %>">
+        </div>
+        <div class="mb-3">
+            <label>Address</label>
+            <input name="address" class="form-control" value="<%= supplier ? supplier.address : '' %>">
+        </div>
+        <div class="mb-3">
+            <label>Phone</label>
+            <input name="phone" class="form-control" value="<%= supplier ? supplier.phone : '' %>">
+        </div>
+        <button class="btn btn-success">Save</button>
+        <a class="btn btn-secondary" href="/suppliers">Cancel</a>
+    </form>
+
+    <%- include('../partials/footer.ejs') %>
